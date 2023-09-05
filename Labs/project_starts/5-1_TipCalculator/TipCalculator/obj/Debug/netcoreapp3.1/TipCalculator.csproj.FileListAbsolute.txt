@@ -1,0 +1,7 @@
+C:\Users\jpscott\Desktop\AWD1115\Labs\project_starts\5-1_TipCalculator\TipCalculator\obj\Debug\netcoreapp3.1\TipCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jpscott\Desktop\AWD1115\Labs\project_starts\5-1_TipCalculator\TipCalculator\obj\Debug\netcoreapp3.1\TipCalculator.AssemblyInfoInputs.cache
+C:\Users\jpscott\Desktop\AWD1115\Labs\project_starts\5-1_TipCalculator\TipCalculator\obj\Debug\netcoreapp3.1\TipCalculator.AssemblyInfo.cs
+C:\Users\jpscott\Desktop\AWD1115\Labs\project_starts\5-1_TipCalculator\TipCalculator\obj\Debug\netcoreapp3.1\TipCalculator.csproj.CoreCompileInputs.cache
+C:\Users\jpscott\Desktop\AWD1115\Labs\project_starts\5-1_TipCalculator\TipCalculator\obj\Debug\netcoreapp3.1\TipCalculator.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\jpscott\Desktop\AWD1115\Labs\project_starts\5-1_TipCalculator\TipCalculator\obj\Debug\netcoreapp3.1\TipCalculator.RazorAssemblyInfo.cache
+C:\Users\jpscott\Desktop\AWD1115\Labs\project_starts\5-1_TipCalculator\TipCalculator\obj\Debug\netcoreapp3.1\TipCalculator.RazorAssemblyInfo.cs
