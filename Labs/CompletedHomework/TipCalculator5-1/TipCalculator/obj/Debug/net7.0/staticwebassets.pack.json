@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Labs\\CompletedHomework\\TipCalculator5-1\\TipCalculator\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Labs\\CompletedHomework\\TipCalculator5-1\\TipCalculator\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.TipCalculator.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.TipCalculator.props",
+      "PackagePath": "build\\TipCalculator.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.TipCalculator.props",
+      "PackagePath": "buildMultiTargeting\\TipCalculator.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.TipCalculator.props",
+      "PackagePath": "buildTransitive\\TipCalculator.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

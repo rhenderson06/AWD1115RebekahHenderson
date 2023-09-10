@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ContactMgr4-1.props" />
+</Project>

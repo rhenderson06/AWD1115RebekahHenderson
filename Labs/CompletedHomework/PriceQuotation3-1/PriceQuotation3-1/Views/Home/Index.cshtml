@@ -14,7 +14,7 @@
     </div>
     <div class="row form-group">
         <label class="col-sm-3" asp-for="DiscountPercent"></label>
-        <div>
+        <div class="col-sm-4">
             <input class="form-control" asp-for="DiscountPercent" />
         </div>
         <span class="col-sm text-danger" asp-validation-for="DiscountPercent"></span>
@@ -32,7 +32,7 @@
     <div class="row">
         <div>
             <button class="btn btn-success" type="submit">Calculate</button>
-            <a class="btn btn-success m1-2" asp-action="Index">Clear</a>
+            <a class="btn btn-success m-2" asp-action="Index">Clear</a>
         </div>
     </div>
 </form>
