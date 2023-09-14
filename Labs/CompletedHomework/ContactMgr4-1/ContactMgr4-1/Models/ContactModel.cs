@@ -19,7 +19,7 @@ namespace ContactMgr4_1.Models
         [Required(ErrorMessage = "Enter contact's email address.")]
         public string Email { get; set; } = string.Empty;
 
-        public string Orginization { get; set; } = string.Empty;
+        public string? Organization { get; set; }
 
         public DateTime DateAdded { get; set; }
 
@@ -27,7 +27,7 @@ namespace ContactMgr4_1.Models
         [Range(1, 100, ErrorMessage = "Enter a contact category.")]
         public int CategoryId { get; set; }
 
-        public CategoryModel Category { get; set; }
+        public CategoryModel? Category { get; set; }
 
         //Read-only property
         public string Slug => $"{FirstName?.Replace(' ', '-').ToLower()} - {LastName?.Replace(" ", "-").ToLower()}";

@@ -21,6 +21,7 @@ namespace ContactMgr4_1.Models
                 new CategoryModel { CategoryId = 3, Name = "Work" },
                 new CategoryModel { CategoryId = 4, Name = "Other" }
             );
+
             //seed data for contacts table
             modelBuilder.Entity<CategoryModel>().HasData(
                 new ContactModel

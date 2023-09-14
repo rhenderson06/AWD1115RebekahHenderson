@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\ContactMgr4-1.props" />
-</Project>
