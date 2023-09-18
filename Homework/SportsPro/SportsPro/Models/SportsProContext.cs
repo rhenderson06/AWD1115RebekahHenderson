@@ -22,7 +22,7 @@ namespace SportsPro.Models
                 {
                     ProductID = 1,
                     ProductCode = "DRAFT10",
-                    Name = "Draft Manager 1.0",
+                    ProductName = "Draft Manager 1.0",
                     YearlyPrice = 4.99M,
                     ReleaseDate = DateTime.Parse("2017-02-01")
                 },
@@ -30,7 +30,7 @@ namespace SportsPro.Models
                 {
                     ProductID = 2,
                     ProductCode = "DRAFT20",
-                    Name = "Draft Manager 2.0",
+                    ProductName = "Draft Manager 2.0",
                     YearlyPrice = 5.99M,
                     ReleaseDate = DateTime.Parse("2019-07-15 00:00:00.000")
                 },
@@ -38,7 +38,7 @@ namespace SportsPro.Models
                 {
                     ProductID = 3,
                     ProductCode = "LEAG10",
-                    Name = "League Scheduler 1.0",
+                    ProductName = "League Scheduler 1.0",
                     YearlyPrice = 4.99M,
                     ReleaseDate = DateTime.Parse("2016-05-01 00:00:00.000")
                 },
@@ -46,7 +46,7 @@ namespace SportsPro.Models
                 {
                     ProductID = 4,
                     ProductCode = "LEAGD10",
-                    Name = "League Scheduler Deluxe 1.0",
+                    ProductName = "League Scheduler Deluxe 1.0",
                     YearlyPrice = 7.99M,
                     ReleaseDate = DateTime.Parse("2016-08-01 00:00:00.000")
                 },
@@ -54,7 +54,7 @@ namespace SportsPro.Models
                 {
                     ProductID = 5,
                     ProductCode = "TEAM10",
-                    Name = "Team Manager 1.0",
+                    ProductName = "Team Manager 1.0",
                     YearlyPrice = 4.99M,
                     ReleaseDate = DateTime.Parse("2017-05-01 00:00:00.000")
                 },
@@ -62,7 +62,7 @@ namespace SportsPro.Models
                 {
                     ProductID = 6,
                     ProductCode = "TRNY10",
-                    Name = "Tournament Master 1.0",
+                    ProductName = "Tournament Master 1.0",
                     YearlyPrice = 4.99M,
                     ReleaseDate = DateTime.Parse("2015-12-01 00:00:00.000")
                 },
@@ -70,7 +70,7 @@ namespace SportsPro.Models
                 {
                     ProductID = 7,
                     ProductCode = "TRNY20",
-                    Name = "Tournament Master 2.0",
+                    ProductName = "Tournament Master 2.0",
                     YearlyPrice = 5.99M,
                     ReleaseDate = DateTime.Parse("2018-02-15 00:00:00.000")
                 }
@@ -79,82 +79,82 @@ namespace SportsPro.Models
             modelBuilder.Entity<Technician>().HasData(
                 new Technician
                 {
-                    TechnicianID = 11,
-                    Name = "Alison Diaz",
-                    Email = "alison@sportsprosoftware.com",
-                    Phone = "800-555-0443"
+                    TechID = 11,
+                    TechName = "Alison Diaz",
+                    TechEmail = "alison@sportsprosoftware.com",
+                    TechPhone = "800-555-0443"
                 },
                 new Technician
                 {
-                    TechnicianID = 12,
-                    Name = "Jason Lee",
-                    Email = "jason@sportsprosoftware.com",
-                    Phone = "800-555-0444"
+                    TechID = 12,
+                    TechName = "Jason Lee",
+                    TechEmail = "jason@sportsprosoftware.com",
+                    TechPhone = "800-555-0444"
                 },
                 new Technician
                 {
-                    TechnicianID = 13,
-                    Name = "Andrew Wilson",
-                    Email = "awilson@sportsprosoftware.com",
-                    Phone = "800-555-0449"
+                    TechID = 13,
+                    TechName = "Andrew Wilson",
+                    TechEmail = "awilson@sportsprosoftware.com",
+                    TechPhone = "800-555-0449"
                 },
                 new Technician
                 {
-                    TechnicianID = 14,
-                    Name = "Gunter Wendt",
-                    Email = "gunter@sportsprosoftware.com",
-                    Phone = "800-555-0400"
+                    TechID = 14,
+                    TechName = "Gunter Wendt",
+                    TechEmail = "gunter@sportsprosoftware.com",
+                    TechPhone = "800-555-0400"
                 },
                 new Technician
                 {
-                    TechnicianID = 15,
-                    Name = "Gina Fiori",
-                    Email = "gfiori@sportsprosoftware.com",
-                    Phone = "800-555-0459"
+                    TechID = 15,
+                    TechName = "Gina Fiori",
+                    TechEmail = "gfiori@sportsprosoftware.com",
+                    TechPhone = "800-555-0459"
                 }
             );
 
             modelBuilder.Entity<Country>().HasData(
-                new Country { CountryID = "AU", Name = "Australia" },
-                new Country { CountryID = "AT", Name = "Austria" },
-                new Country { CountryID = "BE", Name = "Belgium" },
-                new Country { CountryID = "BR", Name = "Brazil" },
-                new Country { CountryID = "CA", Name = "Canada" },
-                new Country { CountryID = "CN", Name = "China" },
-                new Country { CountryID = "DK", Name = "Denmark" },
-                new Country { CountryID = "FI", Name = "Finland" },
-                new Country { CountryID = "FR", Name = "France" },
-                new Country { CountryID = "GR", Name = "Greece" },
-                new Country { CountryID = "GL", Name = "Greenland" },
-                new Country { CountryID = "HK", Name = "Hong Kong" },
-                new Country { CountryID = "IS", Name = "Iceland" },
-                new Country { CountryID = "IN", Name = "India" },
-                new Country { CountryID = "IE", Name = "Ireland" },
-                new Country { CountryID = "IL", Name = "Israel" },
-                new Country { CountryID = "IT", Name = "Italy" },
-                new Country { CountryID = "JP", Name = "Japan" },
-                new Country { CountryID = "LR", Name = "Liberia" },
-                new Country { CountryID = "MY", Name = "Malaysia" },
-                new Country { CountryID = "MX", Name = "Mexico" },
-                new Country { CountryID = "NL", Name = "Netherlands" },
-                new Country { CountryID = "NZ", Name = "New Zealand" },
-                new Country { CountryID = "NG", Name = "Nigeria" },
-                new Country { CountryID = "PH", Name = "Philippines" },
-                new Country { CountryID = "PT", Name = "Portugal" },
-                new Country { CountryID = "PR", Name = "Puerto Rico" },
-                new Country { CountryID = "QA", Name = "Qatar" },
-                new Country { CountryID = "SG", Name = "Singapore" },
-                new Country { CountryID = "ES", Name = "Spain" },
-                new Country { CountryID = "SE", Name = "Sweden" },
-                new Country { CountryID = "CH", Name = "Switzerland" },
-                new Country { CountryID = "TH", Name = "Thailand" },
-                new Country { CountryID = "TR", Name = "Turkey" },
-                new Country { CountryID = "UA", Name = "Ukraine" },
-                new Country { CountryID = "AE", Name = "United Arab Emirates" },
-                new Country { CountryID = "GB", Name = "United Kingdom" },
-                new Country { CountryID = "US", Name = "United States" },
-                new Country { CountryID = "VN", Name = "Vietnam" },
-                new Country { CountryID = "ZW", Name = "Zimbabwe" }
+                new Country { CountryID = "AU", CountryName = "Australia" },
+                new Country { CountryID = "AT", CountryName = "Austria" },
+                new Country { CountryID = "BE", CountryName = "Belgium" },
+                new Country { CountryID = "BR", CountryName = "Brazil" },
+                new Country { CountryID = "CA", CountryName = "Canada" },
+                new Country { CountryID = "CN", CountryName = "China" },
+                new Country { CountryID = "DK", CountryName = "Denmark" },
+                new Country { CountryID = "FI", CountryName = "Finland" },
+                new Country { CountryID = "FR", CountryName = "France" },
+                new Country { CountryID = "GR", CountryName = "Greece" },
+                new Country { CountryID = "GL", CountryName = "Greenland" },
+                new Country { CountryID = "HK", CountryName = "Hong Kong" },
+                new Country { CountryID = "IS", CountryName = "Iceland" },
+                new Country { CountryID = "IN", CountryName = "India" },
+                new Country { CountryID = "IE", CountryName = "Ireland" },
+                new Country { CountryID = "IL", CountryName = "Israel" },
+                new Country { CountryID = "IT", CountryName = "Italy" },
+                new Country { CountryID = "JP", CountryName = "Japan" },
+                new Country { CountryID = "LR", CountryName = "Liberia" },
+                new Country { CountryID = "MY", CountryName = "Malaysia" },
+                new Country { CountryID = "MX", CountryName = "Mexico" },
+                new Country { CountryID = "NL", CountryName = "Netherlands" },
+                new Country { CountryID = "NZ", CountryName = "New Zealand" },
+                new Country { CountryID = "NG", CountryName = "Nigeria" },
+                new Country { CountryID = "PH", CountryName = "Philippines" },
+                new Country { CountryID = "PT", CountryName = "Portugal" },
+                new Country { CountryID = "PR", CountryName = "Puerto Rico" },
+                new Country { CountryID = "QA", CountryName = "Qatar" },
+                new Country { CountryID = "SG", CountryName = "Singapore" },
+                new Country { CountryID = "ES", CountryName = "Spain" },
+                new Country { CountryID = "SE", CountryName = "Sweden" },
+                new Country { CountryID = "CH", CountryName = "Switzerland" },
+                new Country { CountryID = "TH", CountryName = "Thailand" },
+                new Country { CountryID = "TR", CountryName = "Turkey" },
+                new Country { CountryID = "UA", CountryName = "Ukraine" },
+                new Country { CountryID = "AE", CountryName = "United Arab Emirates" },
+                new Country { CountryID = "GB", CountryName = "United Kingdom" },
+                new Country { CountryID = "US", CountryName = "United States" },
+                new Country { CountryID = "VN", CountryName = "Vietnam" },
+                new Country { CountryID = "ZW", CountryName = "Zimbabwe" }
             );
 
             modelBuilder.Entity<Customer>().HasData(

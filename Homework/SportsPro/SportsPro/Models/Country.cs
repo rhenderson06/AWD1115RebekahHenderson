@@ -10,6 +10,6 @@ namespace SportsPro.Models
 		public string CountryID { get; set; }
 
 		[Required]
-		public string Name { get; set; }
+		public string CountryName { get; set; }
 	}
 }

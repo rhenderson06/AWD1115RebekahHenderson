@@ -5,15 +5,15 @@ namespace SportsPro.Models
 {
     public class Technician
     {
-		public int TechnicianID { get; set; }	   
+		public int TechID { get; set; }	   
 
 		[Required]
-		public string Name { get; set; }
+		public string TechName { get; set; }
 
 		[Required]
-		public string Email { get; set; }
+		public string TechEmail { get; set; }
 
 		[Required]
-		public string Phone { get; set; }
+		public string TechPhone { get; set; }
 	}
 }

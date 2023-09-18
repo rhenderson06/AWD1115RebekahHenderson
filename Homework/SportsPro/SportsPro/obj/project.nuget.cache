@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "08l3QV0O3K4RsXHvMraBgERAYM9tYxvjGFdsNIQbmEV28Vzy6VPmPIRMV45OYi/mUhelKww8j+r8pYGFpSZF9g==",
+  "dgSpecHash": "+2dv1VESgu5GOK4Yv2tQv6TwiKcY83OMPv0XsBTQEreGmY6VJx4AyFaDEUXemvZK88ox0G+jsB+JlF2AhgmVng==",
   "success": true,
   "projectFilePath": "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Homework\\SportsPro\\SportsPro\\SportsPro.csproj",
   "expectedPackageFiles": [
@@ -157,11 +157,7 @@
     "C:\\Users\\rebek\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\rebek\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\rebek\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\rebek\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\rebek\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\rebek\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
-    "C:\\Users\\rebek\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
-    "C:\\Users\\rebek\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+    "C:\\Users\\rebek\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

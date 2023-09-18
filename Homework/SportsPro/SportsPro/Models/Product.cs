@@ -13,7 +13,7 @@ namespace SportsPro.Models
 		public string ProductCode { get; set; }
 
 		[Required]
-		public string Name { get; set; }
+		public string ProductName { get; set; }
 
 		[Range(0, 1000000)]
 		[Column(TypeName = "decimal(8,2)")]
