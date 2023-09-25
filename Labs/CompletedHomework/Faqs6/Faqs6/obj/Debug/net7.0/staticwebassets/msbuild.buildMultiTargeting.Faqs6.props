@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Faqs6.props" />
+</Project>
