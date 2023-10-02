@@ -1,0 +1,19 @@
+﻿@model Dictionary<string, string>
+
+@{
+    ViewData["Title"] = "Contact us";
+}
+
+<h1>Contact us</h1>
+
+<p>Here's how to reach us:</p>
+
+<table class="table table-bordered table-striped">
+    @foreach (KeyValuePair<string, string> pair in Model)
+    {
+        <tr>
+            <td>@pair.Key</td>
+            <td>@pair.Value</td>
+        </tr>
+    }
+</table>
