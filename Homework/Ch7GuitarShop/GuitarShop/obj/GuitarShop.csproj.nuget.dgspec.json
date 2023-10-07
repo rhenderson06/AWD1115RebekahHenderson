@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rebek\\Downloads\\Fall2023AWD1115StudentFIles-master\\Fall2023AWD1115StudentFIles-master\\student_download\\ex_solutions\\Ch07Ex1GuitarShop\\GuitarShop\\GuitarShop.csproj": {}
+    "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Homework\\Ch7GuitarShop\\GuitarShop\\GuitarShop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rebek\\Downloads\\Fall2023AWD1115StudentFIles-master\\Fall2023AWD1115StudentFIles-master\\student_download\\ex_solutions\\Ch07Ex1GuitarShop\\GuitarShop\\GuitarShop.csproj": {
+    "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Homework\\Ch7GuitarShop\\GuitarShop\\GuitarShop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rebek\\Downloads\\Fall2023AWD1115StudentFIles-master\\Fall2023AWD1115StudentFIles-master\\student_download\\ex_solutions\\Ch07Ex1GuitarShop\\GuitarShop\\GuitarShop.csproj",
+        "projectUniqueName": "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Homework\\Ch7GuitarShop\\GuitarShop\\GuitarShop.csproj",
         "projectName": "GuitarShop",
-        "projectPath": "C:\\Users\\rebek\\Downloads\\Fall2023AWD1115StudentFIles-master\\Fall2023AWD1115StudentFIles-master\\student_download\\ex_solutions\\Ch07Ex1GuitarShop\\GuitarShop\\GuitarShop.csproj",
+        "projectPath": "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Homework\\Ch7GuitarShop\\GuitarShop\\GuitarShop.csproj",
         "packagesPath": "C:\\Users\\rebek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rebek\\Downloads\\Fall2023AWD1115StudentFIles-master\\Fall2023AWD1115StudentFIles-master\\student_download\\ex_solutions\\Ch07Ex1GuitarShop\\GuitarShop\\obj\\",
+        "outputPath": "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Homework\\Ch7GuitarShop\\GuitarShop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rebek\\AppData\\Roaming\\NuGet\\NuGet.Config",

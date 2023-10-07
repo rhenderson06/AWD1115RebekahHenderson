@@ -14,7 +14,7 @@ namespace SportsPro.Controllers
 
         public ActionResult List()
         {
-            List<Product> products = context.Products.OrderBy(p => p.ReleaseDate).ToList();
+            List<Product> products = context.Products.OrderBy(p => p.Name).ToList();
 
             return View(products);
         }

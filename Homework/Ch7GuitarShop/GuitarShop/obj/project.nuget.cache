@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Q1OP7Xuz/yiLqlXmvTplZtLTUieuDFa7dIRtZSu7z05sVOeQmEFb4l3GODNxQ9HbtnMffBlidHMAaNAEA7OhmQ==",
+  "dgSpecHash": "34j4cX415Npmled6fBh2olZYYqcdHCypY0IdCGUdQqOmLzfIVBn3GgSc1vRCZbk1dI8WfNB/EcPPsrIzXbYKMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rebek\\Downloads\\Fall2023AWD1115StudentFIles-master\\Fall2023AWD1115StudentFIles-master\\student_download\\ex_solutions\\Ch07Ex1GuitarShop\\GuitarShop\\GuitarShop.csproj",
+  "projectFilePath": "C:\\Users\\rebek\\Desktop\\AWD1115RebekahHenderson\\Homework\\Ch7GuitarShop\\GuitarShop\\GuitarShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rebek\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\rebek\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.0\\microsoft.aspnetcore.jsonpatch.3.1.0.nupkg.sha512",
