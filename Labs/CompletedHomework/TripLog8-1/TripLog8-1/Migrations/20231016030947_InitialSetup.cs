@@ -22,7 +22,7 @@ namespace TripLog8_1.Migrations
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Accommodation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AccommodationPhone = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AccomodationEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AccommodationEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ThingToDo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ThingToDo2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ThingToDo3 = table.Column<string>(type: "nvarchar(max)", nullable: true)

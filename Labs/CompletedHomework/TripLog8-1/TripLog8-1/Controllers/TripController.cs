@@ -73,17 +73,17 @@ namespace TripLog8_1.Controllers
             else if (vm.PageNumber == 2)
             {
                 TempData[nameof(Trip.Accommodation)] = vm.Trip.AccommodationPhone;
-                TempData[nameof(Trip.Accommodation)] = vm.Trip.AccomodationEmail;
+                TempData[nameof(Trip.Accommodation)] = vm.Trip.AccommodationEmail;
                 return RedirectToAction("Add", new { id = "Page3" });
             }
             else if (vm.PageNumber == 3)
             {
                 vm.Trip.Destination   = TempData[nameof(Trip.Destination)].ToString();
-                vm.Trip.Accommodation = TempData[nameof(Trip.Accommodation)].ToString();
+                vm.Trip.Accommodation = TempData[nameof(Trip.Accommodation)]?.ToString();
                 vm.Trip.StartDate     = (DateTime)TempData[nameof(Trip.StartDate)];
                 vm.Trip.EndDate       = (DateTime)TempData[nameof(Trip.EndDate)];
-                vm.Trip.Destination   = TempData[nameof(Trip.AccommodationPhone)].ToString();
-                vm.Trip.Destination   = TempData[nameof(Trip.AccomodationEmail)].ToString();
+                vm.Trip.AccommodationPhone   = TempData[nameof(Trip.AccommodationPhone)]?.ToString();
+                vm.Trip.AccommodationEmail   = TempData[nameof(Trip.AccommodationEmail)]?.ToString();
 
                 context.Trips.Add(vm.Trip);
                 context.SaveChanges();

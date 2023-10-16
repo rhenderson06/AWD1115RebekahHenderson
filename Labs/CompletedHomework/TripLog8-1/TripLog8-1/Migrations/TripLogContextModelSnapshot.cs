@@ -33,10 +33,10 @@ namespace TripLog8_1.Migrations
                     b.Property<string>("Accommodation")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AccommodationPhone")
+                    b.Property<string>("AccommodationEmail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AccomodationEmail")
+                    b.Property<string>("AccommodationPhone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Destination")

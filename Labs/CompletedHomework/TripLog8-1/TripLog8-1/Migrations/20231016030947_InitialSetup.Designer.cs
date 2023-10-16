@@ -12,7 +12,7 @@ using TripLog8_1.Models;
 namespace TripLog8_1.Migrations
 {
     [DbContext(typeof(TripLogContext))]
-    [Migration("20231016015322_InitialSetup")]
+    [Migration("20231016030947_InitialSetup")]
     partial class InitialSetup
     {
         /// <inheritdoc />
@@ -36,10 +36,10 @@ namespace TripLog8_1.Migrations
                     b.Property<string>("Accommodation")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AccommodationPhone")
+                    b.Property<string>("AccommodationEmail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AccomodationEmail")
+                    b.Property<string>("AccommodationPhone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Destination")

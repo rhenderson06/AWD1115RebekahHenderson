@@ -17,7 +17,7 @@ namespace TripLog8_1.Models
 
         public string? Accommodation { get; set; } = null;
         public string? AccommodationPhone { get; set; } = null;
-        public string? AccomodationEmail { get; set; } = null;
+        public string? AccommodationEmail { get; set; } = null;
 
         public string? ThingToDo { get; set; } = null;
         public string? ThingToDo2 { get; set; } = null;

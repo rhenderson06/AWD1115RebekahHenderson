@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 using TripLog8_1.Models;
 
 namespace TripLog8_1.Controllers
@@ -15,7 +14,7 @@ namespace TripLog8_1.Controllers
 
         public IActionResult Index()
         {
-            var trips = context.Trips.OrderBy(t => t.StartDate).ToList();
+            var trips = context?.Trips.OrderBy(t => t.StartDate).ToList();
 
             return View(trips);
         }
