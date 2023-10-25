@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\QuarterlySalesApp11.props" />
+</Project>

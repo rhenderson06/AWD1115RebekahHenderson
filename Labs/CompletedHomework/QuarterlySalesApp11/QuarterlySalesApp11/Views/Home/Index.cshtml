@@ -1,0 +1,47 @@
+﻿@model SalesListViewModel
+
+@{
+    ViewBag.Title = "Quarterly Sales";
+}
+
+<h3 class="mt-2 mb-2">@ViewBag.Title</h3>
+
+<form asp-action="index" method="post">
+    <div class="form-group row">
+        <select name="EmployeeID" class="form-control" asp-items="@(new SelectList(Model.Employees, "EmployeeID", "Fullname", Model.EmployeeID))">
+            <option value="0">All</option>
+        </select>
+    </div>
+
+    <div class="col">
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Quarter</th>
+            <th>Employee</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Sale sale in Model.Sales)
+        {
+            <tr>
+                <td>@sale.Year</td>
+                <td>@sale.Quarter</td>
+                <td>@sale.Employee.FullName</td>
+                <td>@sale.Amount?.ToString("c")</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3"> Total Sales</td>
+            <td>@Model.Sales.Sum(m => m.Amount)?.ToString("c")</td>
+        </tr>
+    </tfoot>
+</table>
