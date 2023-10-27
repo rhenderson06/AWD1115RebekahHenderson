@@ -7,12 +7,18 @@ namespace QuarterlySalesApp11.Controllers
     public class HomeController : Controller
     {
         private SalesContext context { get; set; }
-        public HomeController(SalesContext ctx) => context = ctx;
+
+        public HomeController(SalesContext ctx)
+        {
+            context = ctx;
+        }
 
         [HttpGet]
         public IActionResult Index(int id)
         {
-            IQueryable<Sale> query = context.Sales.Include(s => s.Employee).OrderBy(s => s.Year);
+            IQueryable<Sale> query = context.Sales
+                                            .Include(s => s.Employee)
+                                            .OrderBy(s => s.Year);
 
             if (id > 0)
             {
@@ -22,7 +28,9 @@ namespace QuarterlySalesApp11.Controllers
             var vm = new SalesListViewModel
             {
                 Sales = query.ToList(),
-                Employees = context.Employees.OrderBy(e => e.FirstName).ToList(),
+                Employees = context.Employees
+                                   .OrderBy(e => e.FirstName)
+                                   .ToList(),
                 EmployeeID = id
             };
 

@@ -4,7 +4,7 @@ namespace Faqs6.Models
 {
     public class FaqsContext : DbContext
     {
-        public FaqsContext(DbContextOptions<FaqsContext> options) : base() { }
+        public FaqsContext(DbContextOptions<FaqsContext> options) : base(options) { }
 
         public DbSet<FAQ> FAQs { get; set; }
         public DbSet<Topic> Topics { get; set; }

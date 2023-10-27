@@ -4,8 +4,9 @@ namespace QuarterlySalesApp11.Models
 {
     public class SalesContext : DbContext
     {
-        public SalesContext(DbContextOptions<SalesContext> options) : 
-            base(options) { }
+        public SalesContext(DbContextOptions<SalesContext> options) :
+            base(options)
+        { }
 
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Employee> Employees { get; set; }
