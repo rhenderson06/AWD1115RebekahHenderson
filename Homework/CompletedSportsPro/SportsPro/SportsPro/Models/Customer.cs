@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace SportsPro.Models
 {
@@ -27,7 +28,8 @@ namespace SportsPro.Models
         [Required]
         public string CountryID { get; set; }
 
-        public Country Country { get; set; }
+        [ValidateNever]
+        public Country? Country { get; set; }
 
         public string Phone { get; set; } = string.Empty;
         

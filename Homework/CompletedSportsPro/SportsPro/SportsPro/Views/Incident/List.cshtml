@@ -1,0 +1,39 @@
+﻿@model List<Incident>
+
+@{
+    ViewBag.Title = "Incident Manager";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Date Opened</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var incident in Model)
+        {
+            <tr>
+                <td>@incident.Title</td>
+                <td>@incident.Customer.FullName</td>
+                <td>@incident.Product.Name</td>
+                <td>@incident.DateOpened.ToShortDateString()</td>
+                <td>
+                    <a asp-controller="Incident" asp-action="Edit" asp-route-id="@incident.IncidentID">Edit</a>
+                </td>
+                <td>
+                    <a asp-controller="Incident" asp-action="Delete" asp-route-id="@incident.IncidentID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Add" class="btn btn-primary">Add Incident</a>

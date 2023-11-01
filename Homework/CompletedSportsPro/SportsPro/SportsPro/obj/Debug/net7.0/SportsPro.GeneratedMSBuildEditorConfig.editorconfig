@@ -16,8 +16,48 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\rebek\Desktop\AWD1115RebekahHenderson\Homework\CompletedSportsPro\SportsPro\SportsPro
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Customer/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWRkRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Customer/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Customer/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Home/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Incident/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRcQWRkRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Incident/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Incident/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5jaWRlbnRcTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Product/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Product/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Product/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Shared/Error.cshtml]
@@ -26,6 +66,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Technician/AddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2lhblxBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Technician/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2lhblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Technician/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaG5pY2lhblxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/_ViewImports.cshtml]

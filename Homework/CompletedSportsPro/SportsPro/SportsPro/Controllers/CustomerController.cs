@@ -24,6 +24,8 @@ namespace SportsPro.Controllers
         {
             ViewBag.Action = "Add";
 
+            ViewBag.Countries = context.Countries.ToList();
+
             return View("AddEdit", new Customer());
         }
 
@@ -31,6 +33,8 @@ namespace SportsPro.Controllers
         public IActionResult Edit(int id)
         {
             ViewBag.Action = "Edit";
+
+            ViewBag.Countries = context.Countries.ToList();
 
             var customer = context.Customers.Find(id);
 
@@ -40,9 +44,18 @@ namespace SportsPro.Controllers
         [HttpPost]
         public IActionResult Save(Customer customer)
         {
+            if (customer.CustomerID == 0)
+            {
+                ViewBag.Action = "Add";
+            }
+            else
+            {
+                ViewBag.Action = "Edit";
+            }
+
             if (ModelState.IsValid)
             {
-                if (customer.CustomerID == 0)
+                if (ViewBag.Action == "Add")
                 {
                     context.Customers.Add(customer);
                 }
@@ -56,16 +69,8 @@ namespace SportsPro.Controllers
             }
             else
             {
-                if (customer.CustomerID == 0)
-                {
-                    ViewBag.Action = "Add";
-                }
-                else
-                {
-                    ViewBag.Action = "Edit";
-                }
-
-                return View(customer);
+                ViewBag.Countries = context.Countries.ToList();
+                return View("AddEdit", customer);
             }
         }
 

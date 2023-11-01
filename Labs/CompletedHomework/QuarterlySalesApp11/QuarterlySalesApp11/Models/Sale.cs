@@ -25,7 +25,7 @@ namespace QuarterlySalesApp11.Models
         [Display(Name = "Employee")]
         public int EmployeeID { get; set; }
 
-        public Employee Employee { get; set; }
+        public Employee? Employee { get; set; }
 
     }
 }

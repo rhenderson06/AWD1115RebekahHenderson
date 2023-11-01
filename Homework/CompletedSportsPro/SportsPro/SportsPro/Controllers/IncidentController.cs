@@ -70,6 +70,7 @@ namespace SportsPro.Controllers
             }
             else
             {
+                StoreListsInViewBag();
                 if (incident.IncidentID == 0)
                 {
                     ViewBag.Action = "Add";
@@ -79,7 +80,8 @@ namespace SportsPro.Controllers
                     ViewBag.Action = "Edit";
                 }
 
-                return View(incident);
+                //return View(incident);
+                return View("AddEdit", incident);
             }
         }
 

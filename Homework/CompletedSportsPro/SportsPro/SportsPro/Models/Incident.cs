@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 
 namespace SportsPro.Models
 {
@@ -8,17 +9,21 @@ namespace SportsPro.Models
 
         [Required]
         public int CustomerID { get; set; }
+        [ValidateNever]
         public Customer Customer { get; set; }
 
         [Required]
         public int ProductID { get; set; }
+        [ValidateNever]
         public Product Product { get; set; }
 
         public int? TechnicianID { get; set; }
+        [ValidateNever]
         public Technician Technician { get; set; }
 
         [Required] 
         public string Title { get; set; } = string.Empty;
+
         [Required]
         public string Description { get; set; } = string.Empty;
 
