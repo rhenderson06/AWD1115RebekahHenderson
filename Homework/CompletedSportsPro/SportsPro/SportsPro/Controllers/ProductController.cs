@@ -5,22 +5,27 @@ namespace SportsPro.Controllers
 {
     public class ProductController : Controller
     {
-        private SportsProContext context { get; set; }
+        private Repository<Product> data { get; set; }
 
         public ProductController(SportsProContext ctx) 
         {
-            context = ctx;
+            data = new Repository<Product>(ctx);
         }
 
-        public ActionResult List()
+        [Route("[controller]s")]
+        public ViewResult List()
         {
-            List<Product> products = context.Products.OrderBy(p => p.Name).ToList();
+            //List<Product> products = context.Products.OrderBy(p => p.Name).ToList();
+            var products = this.data.List(new QueryOptions<Product>
+            {
+                OrderBy = p => p.ReleaseDate
+            });
 
             return View(products);
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public ViewResult Add()
         {
             ViewBag.Action = "Add";
 
@@ -28,7 +33,7 @@ namespace SportsPro.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public ViewResult Edit(int id)
         {
             ViewBag.Action = "Edit";
 
@@ -40,18 +45,22 @@ namespace SportsPro.Controllers
         [HttpPost]
         public IActionResult Save(Product product)
         {
+            string msg;
             if (ModelState.IsValid)
             {
                 if (product.ProductID == 0)
                 {
                     context.Products.Add(product);
+                    msg = $"{product.Name} was added";
                 }
                 else
                 {
                     context.Products.Update(product);
+                    msg = $"{product.Name} was updated";
                 }
 
                 context.SaveChanges();
+                TempData["message"] = msg;
                 return RedirectToAction("List");
             }
             else
@@ -70,7 +79,7 @@ namespace SportsPro.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public ViewResult Delete(int id)
         {
             var product = context.Products.Find(id);
 
@@ -78,11 +87,12 @@ namespace SportsPro.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Product product)
+        public RedirectToActionResult Delete(Product product)
         {
-            context.Products.Remove(product);
+            var p = context.Products.Find(product.ProductID);
+            context.Products.Remove(p);
             context.SaveChanges();
-
+            TempData["message"] = $"{p.Name} was deleted";
             return RedirectToAction("List");
         }
 

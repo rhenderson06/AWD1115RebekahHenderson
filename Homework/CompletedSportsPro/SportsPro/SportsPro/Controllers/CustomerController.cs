@@ -12,6 +12,7 @@ namespace SportsPro.Controllers
             context = ctx;
         }
 
+        [Route("[controller]s")]
         public ActionResult List()
         {
             List<Customer> customers = context.Customers.OrderBy(c => c.LastName).ToList();
@@ -44,13 +45,18 @@ namespace SportsPro.Controllers
         [HttpPost]
         public IActionResult Save(Customer customer)
         {
-            if (customer.CustomerID == 0)
+            if (customer.CountryID == "XX")
             {
-                ViewBag.Action = "Add";
+                ModelState.AddModelError(nameof(Customer.CountryID), "Required.");
             }
-            else
+
+            if (customer.CustomerID == 0 && TempData["okEmail"] == null)
             {
-                ViewBag.Action = "Edit";
+                string msg = Check.EmailExists(context, customer.Email);
+                if (!string.IsNullOrEmpty(msg))
+                {
+                    ModelState.AddModelError(nameof(Customer.Email), msg);
+                }
             }
 
             if (ModelState.IsValid)
@@ -69,7 +75,15 @@ namespace SportsPro.Controllers
             }
             else
             {
-                ViewBag.Countries = context.Countries.ToList();
+                if (customer.CustomerID == 0)
+                {
+                    ViewBag.Action = "Add";
+                }
+                else
+                {
+                    ViewBag.Action = "Edit";
+                }
+
                 return View("AddEdit", customer);
             }
         }
@@ -87,7 +101,6 @@ namespace SportsPro.Controllers
         {
             context.Customers.Remove(customer);
             context.SaveChanges();
-
             return RedirectToAction("List");
         }
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SportsPro.Models;
+using SportsPro.ViewModels;
 
 namespace SportsPro.Controllers
 {
@@ -13,13 +14,63 @@ namespace SportsPro.Controllers
             context = ctx;
         }
 
-        public ActionResult List()
+        [Route("[controller]s")]
+        public IActionResult List(string filter = "all")
         {
-            List<Incident> incidents = context.Incidents.Include(c => c.Customer)
-                                                        .Include(p => p.Product)
-                                                        .OrderBy(i => i.DateOpened) .ToList();
+            IncidentListViewModel model = new IncidentListViewModel 
+            {
+                Filter = filter
+            };
+
+            var options = new QueryOptions<Incident>
+            {
+                Includes = "Customer, Product",
+                OrderBy = i => i.DateOpened
+            };
+
+            if (filter == "unassigned")
+            {
+                options.Where = i => i.TechnicianID == null;
+            }
+
+            if (filter == "open")
+            {
+                options.Where = i => i.DateClosed == null;
+            }
+
+            //List<Incident> incidents = context.Incidents.Include(c => c.Customer)
+            //                                            .Include(p => p.Product)
+            //                                            .OrderBy(i => i.DateOpened) .ToList();
+            IEnumerable<Incident> incidents = context.Incidents.List(options);
+            model.Incidents = incidents;
 
             return View(incidents);
+        }
+
+        private IncidentViewModel GetViewModel()
+        {
+            IncidentViewModel model = new IncidentViewModel
+            {
+                Customers = context.Customers.List(new QueryOptions<Customer>
+                {
+                    OrderBy = c => c.FirstName
+                }),
+                Products = context.Products.List(new QueryOptions<Product>
+                {
+                    OrderBy = c => c.Name
+                }),
+                Technicians = context.Technicians.List(new QueryOptions<Technician>
+                {
+                    OrderBy = c => c.Name
+                })
+            };
+
+            return model;
+        }
+
+        public IActionResult Filter(string id)
+        {
+            return RedirectToAction("List", new { Filter = id });
         }
 
         public void StoreListsInViewBag()
@@ -32,23 +83,21 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            ViewBag.Action = "Add";
-
-            StoreListsInViewBag();
-
-            return View("AddEdit", new Incident());
+            IncidentViewModel model = GetViewModel();
+            model.Incident = new Incident();
+            model.Action = "Add";
+            return View("AddEdit", model);
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            ViewBag.Action = "Edit";
-
-            StoreListsInViewBag();
-
+            IncidentViewModel model = GetViewModel();
             var incident = context.Incidents.Find(id);
+            model.Incident = incident;
+            model.Action = "Edit";
 
-            return View("AddEdit", incident);
+            return View("AddEdit", model);
         }
 
         [HttpPost]
@@ -70,18 +119,19 @@ namespace SportsPro.Controllers
             }
             else
             {
-                StoreListsInViewBag();
+                IncidentViewModel model = GetViewModel();
+                model.Incident = incident;
+
                 if (incident.IncidentID == 0)
                 {
-                    ViewBag.Action = "Add";
+                    model.Action = "Add";
                 }
                 else
                 {
-                    ViewBag.Action = "Edit";
+                    model.Action = "Edit";
                 }
 
-                //return View(incident);
-                return View("AddEdit", incident);
+                return View("AddEdit", model);
             }
         }
 
@@ -89,7 +139,6 @@ namespace SportsPro.Controllers
         public IActionResult Delete(int id)
         {
             var incident = context.Incidents.Find(id);
-
             return View(incident);
         }
 
@@ -98,7 +147,6 @@ namespace SportsPro.Controllers
         {
             context.Incidents.Remove(incident);
             context.SaveChanges();
-
             return RedirectToAction("List");
         }
 
