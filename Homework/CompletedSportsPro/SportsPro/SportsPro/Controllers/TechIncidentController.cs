@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Mvc;
-using SportsPro.ViewModels;
 using SportsPro.DataLayer;
 
 namespace SportsPro.Controllers
