@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 using SportsPro.ViewModels;
 
@@ -7,11 +8,11 @@ namespace SportsPro.Controllers
 {
     public class IncidentController : Controller
     {
-        private SportsProContext context { get; set; }
+        private SportsProUnit data { get; set; }
 
         public IncidentController(SportsProContext ctx)
         {
-            context = ctx;
+            data = new SportsProUnit(ctx);
         }
 
         [Route("[controller]s")]
@@ -41,7 +42,7 @@ namespace SportsPro.Controllers
             //List<Incident> incidents = context.Incidents.Include(c => c.Customer)
             //                                            .Include(p => p.Product)
             //                                            .OrderBy(i => i.DateOpened) .ToList();
-            IEnumerable<Incident> incidents = context.Incidents.List(options);
+            IEnumerable<Incident> incidents = data.Incidents.List(options);
             model.Incidents = incidents;
 
             return View(incidents);
@@ -51,15 +52,15 @@ namespace SportsPro.Controllers
         {
             IncidentViewModel model = new IncidentViewModel
             {
-                Customers = context.Customers.List(new QueryOptions<Customer>
+                Customers = data.Customers.List(new QueryOptions<Customer>
                 {
                     OrderBy = c => c.FirstName
                 }),
-                Products = context.Products.List(new QueryOptions<Product>
+                Products = data.Products.List(new QueryOptions<Product>
                 {
                     OrderBy = c => c.Name
                 }),
-                Technicians = context.Technicians.List(new QueryOptions<Technician>
+                Technicians = data.Technicians.List(new QueryOptions<Technician>
                 {
                     OrderBy = c => c.Name
                 })
@@ -71,13 +72,6 @@ namespace SportsPro.Controllers
         public IActionResult Filter(string id)
         {
             return RedirectToAction("List", new { Filter = id });
-        }
-
-        public void StoreListsInViewBag()
-        {
-            ViewBag.Customers = context.Customers.OrderBy(c => c.FirstName);
-            ViewBag.Products = context.Products.OrderBy(p => p.Name).ToList();
-            ViewBag.Technicians = context.Technicians.OrderBy(t => t.Name).ToList();
         }
 
         [HttpGet]
@@ -93,7 +87,7 @@ namespace SportsPro.Controllers
         public IActionResult Edit(int id)
         {
             IncidentViewModel model = GetViewModel();
-            var incident = context.Incidents.Find(id);
+            var incident = data.Incidents.Get(id);
             model.Incident = incident;
             model.Action = "Edit";
 
@@ -107,14 +101,14 @@ namespace SportsPro.Controllers
             {
                 if (incident.IncidentID == 0)
                 {
-                    context.Incidents.Add(incident);
+                    data.Incidents.Insert(incident);
                 }
                 else
                 {
-                    context.Incidents.Update(incident);
+                    data.Incidents.Update(incident);
                 }
 
-                context.SaveChanges();
+                data.Save();
                 return RedirectToAction("List");
             }
             else
@@ -138,15 +132,15 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var incident = context.Incidents.Find(id);
+            var incident = data.Incidents.Get(id);
             return View(incident);
         }
 
         [HttpPost]
         public IActionResult Delete(Incident incident)
         {
-            context.Incidents.Remove(incident);
-            context.SaveChanges();
+            data.Incidents.Delete(incident);
+            data.Save();
             return RedirectToAction("List");
         }
 

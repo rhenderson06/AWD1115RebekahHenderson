@@ -1,21 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
     public class TechnicianController : Controller
     {
-        private SportsProContext context { get; set; }
+        private Repository<Technician> data { get; set; }
 
         public TechnicianController(SportsProContext ctx)
         {
-            context = ctx;
+            data = new Repository<Technician>(ctx);
         }
 
         [Route("[controller]s")]
         public ActionResult List()
         {
-            List<Technician> techs = context.Technicians.OrderBy(t => t.Name).ToList();
+            var techs = this.data.List(new QueryOptions<Technician>
+            {
+                OrderBy = t => t.Name
+            });
 
             return View(techs);
         }
@@ -33,7 +37,7 @@ namespace SportsPro.Controllers
         {
             ViewBag.Action = "Edit";
 
-            var tech = context.Technicians.Find(id);
+            var tech = data.Get(id);
 
             return View("AddEdit", tech);
         }
@@ -45,14 +49,14 @@ namespace SportsPro.Controllers
             {
                 if (tech.TechnicianID == 0)
                 {
-                    context.Technicians.Add(tech);
+                    data.Insert(tech);
                 }
                 else
                 {
-                    context.Technicians.Update(tech);
+                    data.Update(tech);
                 }
 
-                context.SaveChanges();
+                data.Save();
                 return RedirectToAction("List");
             }
             else
@@ -73,7 +77,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var tech = context.Technicians.Find(id);
+            var tech = data.Get(id);
 
             return View(tech);
         }
@@ -81,8 +85,8 @@ namespace SportsPro.Controllers
         [HttpPost]
         public IActionResult Delete(Technician tech)
         {
-            context.Technicians.Remove(tech);
-            context.SaveChanges();
+            data.Delete(tech);
+            data.Save();
 
             return RedirectToAction("List");
         }

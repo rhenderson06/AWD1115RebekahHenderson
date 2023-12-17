@@ -1,19 +1,23 @@
 ﻿using System.Linq;
+using SportsPro.DataLayer.SeedData;
 
 namespace SportsPro.Models
 {
     public class Check
     {
-        public static string EmailExists(SportsProContext context, string email)
+        public static string EmailExists(Repository<Customer> data, string email)
         {
             string msg = "";
 
             if (!string.IsNullOrEmpty(email))
             {
-                var customer = context.Customers.FirstOrDefault(c => c.Email.ToLower() == email.ToLower());
+                var customer = data.Get(new QueryOptions<Customer>
+                {
+                    Where = c => c.Email.ToLower() == email.ToLower()
+                });
                 if (customer != null)
                 {
-                    msg = "Email is already in use.";
+                    msg = "Email address already in use";
                 }
             }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
@@ -37,7 +38,7 @@ namespace SportsPro.Controllers
         {
             ViewBag.Action = "Edit";
 
-            var product = context.Products.Find(id);
+            var product = data.Get(id);
 
             return View("AddEdit", product);
         }
@@ -50,16 +51,16 @@ namespace SportsPro.Controllers
             {
                 if (product.ProductID == 0)
                 {
-                    context.Products.Add(product);
+                    data.Insert(product);
                     msg = $"{product.Name} was added";
                 }
                 else
                 {
-                    context.Products.Update(product);
+                    data.Update(product);
                     msg = $"{product.Name} was updated";
                 }
 
-                context.SaveChanges();
+                data.Save();
                 TempData["message"] = msg;
                 return RedirectToAction("List");
             }
@@ -81,7 +82,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public ViewResult Delete(int id)
         {
-            var product = context.Products.Find(id);
+            var product = data.Get(id);
 
             return View(product);
         }
@@ -89,9 +90,9 @@ namespace SportsPro.Controllers
         [HttpPost]
         public RedirectToActionResult Delete(Product product)
         {
-            var p = context.Products.Find(product.ProductID);
-            context.Products.Remove(p);
-            context.SaveChanges();
+            var p = data.Get(product.ProductID);
+            data.Delete(p);
+            data.Save();
             TempData["message"] = $"{p.Name} was deleted";
             return RedirectToAction("List");
         }

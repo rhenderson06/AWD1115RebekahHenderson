@@ -1,19 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
     public class ValidationController : Controller
     {
-        private SportsProContext context;
+        private Repository<Customer> data { get; set; }
 
-        public ValidationController(SportsProContext ctx) => context = ctx;
+        public ValidationController(SportsProContext ctx) => data = new Repository<Customer>(ctx);
 
         public JsonResult CheckEmail(string email, int customerID)
         {
             if (customerID == 0)
             {
-                string msg = Check.EmailExists(context, email);
+                string msg = Check.EmailExists(data, email);
                 if (!string.IsNullOrEmpty(msg))
                 {
                     return Json(msg);

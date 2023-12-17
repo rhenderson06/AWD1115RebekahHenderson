@@ -60,12 +60,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Registration/GetCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXEdldEN1c3RvbWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Registration/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/TechIncident/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaEluY2lkZW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/TechIncident/Get.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaEluY2lkZW50XEdldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/TechIncident/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVjaEluY2lkZW50XExpc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rebek/Desktop/AWD1115RebekahHenderson/Homework/CompletedSportsPro/SportsPro/SportsPro/Views/Technician/AddEdit.cshtml]

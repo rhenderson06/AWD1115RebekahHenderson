@@ -24,10 +24,12 @@
                 <td>@technician.Email</td>
                 <td>@technician.Phone</td>
                 <td>
-                    <a asp-controller="Technician" asp-action="Edit" asp-route-id="@technician.TechnicianID">Edit</a>
+                    <a asp-controller="Technician" asp-action="Edit" 
+                        asp-route-id="@technician.TechnicianID" class="btn btn-primary">Edit</a>
                 </td>
                 <td>
-                    <a asp-controller="Technician" asp-action="Delete" asp-route-id="@technician.TechnicianID">Delete</a>
+                    <a asp-controller="Technician" asp-action="Delete"
+                       asp-route-id="@technician.TechnicianID" class="btn btn-primary">Delete</a>
                 </td>
             </tr>
         }

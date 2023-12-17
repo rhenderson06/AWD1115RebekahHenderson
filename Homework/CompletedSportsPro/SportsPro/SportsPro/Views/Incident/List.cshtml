@@ -1,10 +1,19 @@
-﻿@model List<Incident>
+﻿@model IncidentListViewModel
 
 @{
-    ViewBag.Title = "Incident Manager";
+    ViewBag.Title = "Product Manager";
 }
 
-<h1>@ViewBag.Title</h1>
+<h1>Incident Manager</h1>
+
+<nav class="nav nav-pills mb-3">
+    <a asp-action="Filter" asp-route-id="all" class="nav-item nav-link
+        @(Model.Filter == "all" ? "active" : "" )">All incidents</a>
+    <a asp-action="Filter" asp-route-id="unassigned" class="nav-item nav-link
+        @(Model.Filter == "unassigned" ? "active" : "" )">Unassigned incidents</a>
+    <a asp-action="Filter" asp-route-id="open" class="nav-item nav-link
+        @(Model.Filter == "alopenl" ? "active" : "" )">Open incidents</a>
+</nav>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -18,7 +27,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var incident in Model)
+        @foreach (var incident in Model.Incidents)
         {
             <tr>
                 <td>@incident.Title</td>
@@ -26,10 +35,12 @@
                 <td>@incident.Product.Name</td>
                 <td>@incident.DateOpened.ToShortDateString()</td>
                 <td>
-                    <a asp-controller="Incident" asp-action="Edit" asp-route-id="@incident.IncidentID">Edit</a>
+                    <a asp-controller="Incident" asp-action="Edit" 
+                        asp-route-id="@incident.IncidentID" class="btn btn-primary">Edit</a>
                 </td>
                 <td>
-                    <a asp-controller="Incident" asp-action="Delete" asp-route-id="@incident.IncidentID">Delete</a>
+                    <a asp-controller="Incident" asp-action="Delete"
+                       asp-route-id="@incident.IncidentID" class="btn btn-primary">Delete</a>
                 </td>
             </tr>
         }

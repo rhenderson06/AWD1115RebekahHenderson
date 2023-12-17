@@ -34,9 +34,10 @@ namespace SportsPro.Models
 
         public string CountryID { get; set; }
 
+        public Country? Country { get; set; }
+
         [RegularExpression(@"^((\(\d{3}\) ?)|(\d{3}-))?\d[3]-\d{4}$", ErrorMessage = "Phone number must be in (111) 111-1111 format.")]
         public string Phone { get; set; } = string.Empty;
-        public Country? Country { get; set; }
 
         [Required(ErrorMessage = "Email is required.")]
         [StringLength(50)]

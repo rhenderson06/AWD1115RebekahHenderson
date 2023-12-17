@@ -37,6 +37,12 @@
                         <a class="nav-item nav-link @(controller == "Product" ? "active" : "")"
                            asp-controller="Product" asp-action="List">Products</a>
                     </div>
+                    
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link @(controller == "Technician" ? "active" : "")"
+                           asp-controller="Technician" asp-action="List">Technicians</a>
+                    </div>
+
 
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link @(controller == "Customer" ? "active" : "")"

@@ -1,21 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
     public class CustomerController : Controller
     {
-        private SportsProContext context { get; set; }
+        private SportsProUnit data { get; set; }
 
         public CustomerController(SportsProContext ctx)
         {
-            context = ctx;
+            data = new SportsProUnit(ctx);
         }
 
         [Route("[controller]s")]
         public ActionResult List()
         {
-            List<Customer> customers = context.Customers.OrderBy(c => c.LastName).ToList();
+            var customers = data.Customers.List(new QueryOptions<Customer>
+            {
+                OrderBy = c => c.LastName
+            }) ;
 
             return View(customers);
         }
@@ -25,7 +29,7 @@ namespace SportsPro.Controllers
         {
             ViewBag.Action = "Add";
 
-            ViewBag.Countries = context.Countries.ToList();
+            ViewBag.Countries = GetCountryList();
 
             return View("AddEdit", new Customer());
         }
@@ -35,9 +39,9 @@ namespace SportsPro.Controllers
         {
             ViewBag.Action = "Edit";
 
-            ViewBag.Countries = context.Countries.ToList();
+            ViewBag.Countries = GetCountryList();
 
-            var customer = context.Customers.Find(id);
+            var customer = data.Customers.Get(id);
 
             return View("AddEdit", customer);
         }
@@ -52,7 +56,7 @@ namespace SportsPro.Controllers
 
             if (customer.CustomerID == 0 && TempData["okEmail"] == null)
             {
-                string msg = Check.EmailExists(context, customer.Email);
+                string msg = Check.EmailExists(data.Customers, customer.Email);
                 if (!string.IsNullOrEmpty(msg))
                 {
                     ModelState.AddModelError(nameof(Customer.Email), msg);
@@ -63,14 +67,14 @@ namespace SportsPro.Controllers
             {
                 if (ViewBag.Action == "Add")
                 {
-                    context.Customers.Add(customer);
+                    data.Customers.Insert(customer);
                 }
                 else
                 {
-                    context.Customers.Update(customer);
+                    data.Customers.Update(customer);
                 }
 
-                context.SaveChanges();
+                data.Save();
                 return RedirectToAction("List");
             }
             else
@@ -89,20 +93,15 @@ namespace SportsPro.Controllers
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
-        {
-            var customer = context.Customers.Find(id);
-
-            return View(customer);
-        }
-
-        [HttpPost]
         public IActionResult Delete(Customer customer)
         {
-            context.Customers.Remove(customer);
-            context.SaveChanges();
+            data.Customers.Delete(customer);
+            data.Save();
             return RedirectToAction("List");
         }
+
+        IEnumerable<Country> GetCountryList() =>
+            data.Countries.List(new QueryOptions<Country> { OrderBy = c => c.Name });
 
     }
 }

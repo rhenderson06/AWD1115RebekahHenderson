@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<SportsProContext>(options =>
 options.UseSqlServer(
-    builder.Configuration.GetConnectionString("SportsProContext")));
+    builder.Configuration.GetConnectionString("SportsPro")));
 
 builder.Services.AddSession(options =>
 {

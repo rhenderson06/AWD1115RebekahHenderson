@@ -1,6 +1,4 @@
-﻿using SportsPro.Models;
-
-namespace SportsPro.ViewModels
+﻿namespace SportsPro.Models
 {
     public class IncidentViewModel
     {

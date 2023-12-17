@@ -6,7 +6,7 @@
 
 <div class="jumbotron text-danger mt-4 px-2">
     <h1>Confirm deletion?</h1>
-    <p>Are you sure you want to delete @Model.Title?</p>
+    <p>Are you sure you want to delete '@Model.Title'?</p>
 
     <form asp-controller="Incident" asp-action="Delete" method="post">
         <input type="hidden" asp-for="IncidentID" />
