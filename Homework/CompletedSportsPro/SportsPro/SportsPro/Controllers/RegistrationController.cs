@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SportsPro.DataLayer;
 using SportsPro.Models;
+using Microsoft.AspNetCore.Authorization
 
 namespace SportsPro.Controllers
 {
